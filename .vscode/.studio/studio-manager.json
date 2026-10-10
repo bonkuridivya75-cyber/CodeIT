@@ -1,0 +1,34 @@
+{
+  "rules": [
+    {
+      "condition": "always",
+      "commandType": "vscode",
+      "command": "studio-manager.openFile index.js 1"
+    },
+    {
+      "condition": "always",
+      "commandType": "vscode",
+      "command": "studio-manager.openSimpleBrowser https://${STUDIO_HOST_ID}-5173.${STUDIO_HOST}",
+      "delay": 2000
+    },
+    {
+      "condition": "always",
+      "commandType": "vscode",
+      "command": "studio-manager.setEnvVarInFile MONGO_DB_URI mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@${MONGODB_HOST}:${MONGODB_PORT}/${MONGODB_DB} .env"
+    },
+    {
+      "condition": "always",
+      "commandType": "vscode",
+      "command": "studio-manager.openTerminal",
+      "cmdArgs": [
+        "npm run setup && npm run dev",
+        {
+          "name": "setup",
+          "location": 1
+        }
+      ],
+      "delay": 2500
+    }
+  ],
+  "simpleBrowserDefaultAppUrl": "https://${STUDIO_HOST_ID}-5173.${STUDIO_HOST}"
+}

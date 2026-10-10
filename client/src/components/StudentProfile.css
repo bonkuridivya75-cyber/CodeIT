@@ -1,0 +1,348 @@
+/* =========================================
+   STUDENT PROFILE - CLASSIC PROFESSIONAL UI
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.student-profile-page {
+  min-height: 100vh;
+  background: #eef2f7;
+  padding: 30px 40px 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172033;
+}
+
+/* ==============================
+   TOP BAR
+   ============================== */
+
+.profile-topbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.back-dashboard-btn,
+.profile-logout-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-dashboard-btn {
+  background: #64748b;
+  color: #ffffff;
+}
+
+.back-dashboard-btn:hover {
+  background: #475569;
+}
+
+.profile-logout-btn {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.profile-logout-btn:hover {
+  background: #dc2626;
+}
+
+/* ==============================
+   MAIN PROFILE CARD
+   ============================== */
+
+.student-profile-card {
+  width: 900px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid #dfe5ec;
+  border-radius: 16px;
+  padding: 42px 44px;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* ==============================
+   PROFILE HEADER
+   ============================== */
+
+.profile-header {
+  text-align: center;
+  margin-bottom: 34px;
+}
+
+.profile-avatar {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: #2563eb;
+  color: #ffffff;
+
+  font-size: 40px;
+  font-weight: 700;
+
+  border: 5px solid #dbeafe;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.18);
+}
+
+.profile-header h1 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.profile-header p {
+  margin: 9px 0 0;
+  color: #64748b;
+  font-size: 15px;
+}
+
+/* ==============================
+   PROFILE INFORMATION
+   ============================== */
+
+.profile-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.profile-field {
+  min-height: 94px;
+  padding: 17px 18px;
+
+  background: #f8fafc;
+  border: 1px solid #dbe2ea;
+  border-radius: 9px;
+
+  transition: border-color 0.2s ease;
+}
+
+.profile-field:hover {
+  border-color: #b8c4d3;
+}
+
+.profile-field label {
+  display: block;
+  margin-bottom: 9px;
+
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.profile-value {
+  color: #111827;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.email-value {
+  color: #1e40af;
+}
+
+/* ==============================
+   INPUTS
+   ============================== */
+
+.profile-field input,
+.profile-field select {
+  width: 100%;
+  height: 42px;
+
+  padding: 0 12px;
+
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+
+  color: #111827;
+  font-size: 14px;
+  font-family: inherit;
+
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.profile-field input:focus,
+.profile-field select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.profile-field input::placeholder {
+  color: #94a3b8;
+}
+
+/* ==============================
+   READ ONLY MESSAGE
+   ============================== */
+
+.readonly-text {
+  display: block;
+  margin-top: 6px;
+
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+/* ==============================
+   ACTION BUTTONS
+   ============================== */
+
+.profile-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 30px;
+  padding-top: 25px;
+
+  border-top: 1px solid #e5e7eb;
+}
+
+.edit-profile-btn,
+.save-profile-btn,
+.cancel-profile-btn {
+  min-width: 145px;
+
+  padding: 12px 22px;
+
+  border: none;
+  border-radius: 6px;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Edit */
+
+.edit-profile-btn {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.edit-profile-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Save */
+
+.save-profile-btn {
+  background: #16a34a;
+  color: #ffffff;
+}
+
+.save-profile-btn:hover {
+  background: #15803d;
+}
+
+/* Cancel */
+
+.cancel-profile-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cancel-profile-btn:hover {
+  background: #d1d5db;
+}
+
+/* ==============================
+   TABLET
+   ============================== */
+
+@media (max-width: 800px) {
+  .student-profile-page {
+    padding: 25px 20px 40px;
+  }
+
+  .student-profile-card {
+    padding: 35px 28px;
+  }
+
+  .profile-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==============================
+   MOBILE
+   ============================== */
+
+@media (max-width: 550px) {
+  .student-profile-page {
+    padding: 18px 12px 30px;
+  }
+
+  .profile-topbar {
+    margin-bottom: 20px;
+  }
+
+  .back-dashboard-btn,
+  .profile-logout-btn {
+    padding: 10px 13px;
+    font-size: 12px;
+  }
+
+  .student-profile-card {
+    padding: 28px 18px;
+    border-radius: 12px;
+  }
+
+  .profile-avatar {
+    width: 78px;
+    height: 78px;
+    font-size: 32px;
+  }
+
+  .profile-header h1 {
+    font-size: 26px;
+  }
+
+  .profile-header p {
+    font-size: 13px;
+  }
+
+  .profile-content {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .profile-field {
+    min-height: auto;
+    padding: 15px;
+  }
+
+  .profile-actions {
+    flex-direction: column;
+  }
+
+  .edit-profile-btn,
+  .save-profile-btn,
+  .cancel-profile-btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,929 @@
+/* =========================================================
+   CODEIT STUDENT DASHBOARD
+   FULL DARK / LIGHT RESPONSIVE DESIGN
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+  font-family: Inter, Arial, Helvetica, sans-serif;
+}
+
+.student-dashboard {
+  min-height: 100vh;
+  display: flex;
+  background: #f5f7fb;
+  color: #0f172a;
+  transition: 0.3s ease;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.student-sidebar {
+  width: 270px;
+  min-height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: 25px 16px;
+  background: rgba(255, 255, 255, 0.97);
+  border-right: 1px solid #e2e8f0;
+  box-shadow: 8px 0 30px rgba(15, 23, 42, 0.04);
+}
+
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 10px 28px;
+}
+
+.logo-symbol {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: #fff;
+  font-weight: 800;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.logo-text {
+  font-size: 23px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo-text span {
+  color: #2563eb;
+}
+
+.student-mini-profile {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.student-avatar,
+.topbar-avatar {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  font-weight: 800;
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.student-avatar {
+  width: 42px;
+  height: 42px;
+}
+
+.student-mini-info {
+  min-width: 0;
+}
+
+.student-mini-info h4 {
+  margin: 0;
+  max-width: 145px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+.student-mini-info span {
+  display: block;
+  margin-top: 3px;
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.sidebar-menu,
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.sidebar-link {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #64748b;
+  padding: 13px 14px;
+  border-radius: 13px;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 650;
+  transition: 0.25s ease;
+}
+
+.sidebar-link:hover {
+  background: #eff6ff;
+  color: #2563eb;
+  transform: translateX(4px);
+}
+
+.sidebar-link:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 3px;
+}
+
+.sidebar-icon {
+  width: 25px;
+  display: grid;
+  place-items: center;
+  font-size: 17px;
+}
+
+.sidebar-link.active {
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.sidebar-link.active:hover {
+  color: #fff;
+}
+
+.code-battle-link {
+  margin-top: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(124, 58, 237, 0.06),
+    rgba(37, 99, 235, 0.04)
+  );
+}
+
+.battle-new-badge {
+  margin-left: auto;
+  padding: 4px 7px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+  color: #fff;
+  font-size: 8px !important;
+}
+
+.logout-button:hover {
+  color: #dc2626;
+  background: #fef2f2;
+}
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.student-main {
+  width: calc(100% - 270px);
+  min-height: 100vh;
+  margin-left: 270px;
+  padding: 30px 40px 50px;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   TOPBAR
+========================================================= */
+
+.student-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.topbar-small {
+  margin: 0 0 7px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.student-topbar h1 {
+  margin: 0;
+  font-size: 32px;
+  letter-spacing: -1px;
+}
+
+.student-topbar h1 span {
+  color: #2563eb;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar-theme-button {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  transition: 0.25s ease;
+}
+
+.topbar-theme-button:hover {
+  border-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.topbar-avatar {
+  width: 44px;
+  height: 44px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.student-hero {
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-radius: 24px;
+  padding: 42px 48px;
+  margin-bottom: 25px;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #172554 45%,
+    #312e81
+  );
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+}
+
+.hero-grid,
+.battle-promotion-grid {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(96, 165, 250, 0.18) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(96, 165, 250, 0.18) 1px,
+      transparent 1px
+    );
+
+  background-size: 45px 45px;
+  opacity: 0.22;
+
+  animation: gridMove 18s linear infinite;
+}
+
+.battle-promotion-grid {
+  background-size: 30px 30px;
+  opacity: 0.15;
+}
+
+@keyframes gridMove {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(45px);
+  }
+}
+
+.hero-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.hero-glow-one {
+  width: 330px;
+  height: 330px;
+  right: -90px;
+  top: -160px;
+  background: rgba(37, 99, 235, 0.35);
+  animation: glowFloat 6s ease-in-out infinite;
+}
+
+.hero-glow-two {
+  width: 280px;
+  height: 280px;
+  left: 40%;
+  bottom: -190px;
+  background: rgba(124, 58, 237, 0.35);
+  animation: glowFloat 7s ease-in-out infinite reverse;
+}
+
+@keyframes glowFloat {
+  50% {
+    transform: translateY(18px);
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 750px;
+}
+
+.hero-badge {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 10px #22c55e;
+  animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+  50% {
+    opacity: 0.45;
+    transform: scale(0.8);
+  }
+}
+
+.hero-content h2 {
+  margin: 20px 0 12px;
+  font-size: clamp(38px, 5vw, 62px);
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.hero-content h2 span {
+  display: inline-block;
+  margin-left: 12px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-content p {
+  max-width: 620px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.primary-action,
+.battle-action,
+.battle-start-button {
+  border: 0;
+  padding: 13px 20px;
+  border-radius: 11px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.primary-action {
+  color: #1d4ed8;
+  background: #fff;
+}
+
+.battle-action {
+  color: #fff;
+  background: linear-gradient(135deg, #7c3aed, #2563eb);
+}
+
+.primary-action:hover,
+.battle-action:hover,
+.battle-start-button:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.dashboard-stats,
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.dashboard-stats {
+  margin-bottom: 35px;
+}
+
+.stat-card,
+.quick-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+}
+
+.stat-card {
+  min-height: 115px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  transition: 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+.stat-icon,
+.quick-card-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  font-size: 21px;
+  background: #eff6ff;
+}
+
+.stat-card:nth-child(2) .stat-icon,
+.quick-card:nth-child(4) .quick-card-icon {
+  background: #fef3c7;
+}
+
+.stat-card:nth-child(3) .stat-icon,
+.quick-card:nth-child(2) .quick-card-icon {
+  background: #dcfce7;
+}
+
+.stat-card:nth-child(4) .stat-icon,
+.quick-card:nth-child(3) .quick-card-icon {
+  background: #f3e8ff;
+}
+
+.stat-card span {
+  display: block;
+  margin-bottom: 7px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.stat-card strong {
+  font-size: 24px;
+}
+
+.battle-stat-card {
+  cursor: pointer !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+.battle-stat-card strong {
+  color: #7c3aed;
+}
+
+/* =========================================================
+   QUICK ACTIONS
+========================================================= */
+
+.quick-actions-section {
+  margin-bottom: 30px;
+}
+
+.section-heading {
+  margin-bottom: 17px;
+}
+
+.section-heading p {
+  margin: 0 0 6px;
+  color: #2563eb;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.quick-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 205px;
+  padding: 22px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.quick-card:hover {
+  transform: translateY(-6px);
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.09);
+}
+
+.quick-card h3 {
+  margin: 18px 0 7px;
+  font-size: 16px;
+}
+
+.quick-card p {
+  margin: 0;
+  min-height: 38px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.quick-card > span {
+  display: block;
+  margin-top: 17px;
+  color: #2563eb;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.battle-card {
+  border-color: rgba(124, 58, 237, 0.22);
+}
+
+.battle-card > span {
+  color: #7c3aed;
+}
+
+.battle-card-badge {
+  position: absolute;
+  top: 19px;
+  right: 18px;
+  padding: 5px 8px;
+  border-radius: 7px;
+  background: #f3e8ff;
+  color: #7c3aed;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+/* =========================================================
+   BATTLE PROMOTION
+========================================================= */
+
+.battle-promotion {
+  position: relative;
+  overflow: hidden;
+  min-height: 145px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 25px;
+  padding: 27px 32px;
+
+  border-radius: 20px;
+
+  color: #fff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111827,
+      #312e81,
+      #4c1d95
+    );
+
+  box-shadow:
+    0 20px 40px rgba(49, 46, 129, 0.18);
+}
+
+.battle-promotion-content {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.battle-promotion-icon {
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  font-size: 27px;
+}
+
+.battle-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.battle-title-row h2 {
+  margin: 0;
+  font-size: 21px;
+}
+
+.battle-title-row span {
+  padding: 5px 7px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #c4b5fd;
+  font-size: 8px;
+  font-weight: 900;
+}
+
+.battle-promotion-content p {
+  max-width: 650px;
+  margin: 7px 0 0;
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.battle-start-button {
+  position: relative;
+  z-index: 2;
+  background: #fff;
+  color: #4c1d95;
+}
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+.dark-mode {
+  background: #080d17;
+  color: #e2e8f0;
+}
+
+.dark-mode .student-sidebar {
+  background: #0b1220;
+  border-color: #1e293b;
+}
+
+.dark-mode .logo-text,
+.dark-mode .student-topbar h1,
+.dark-mode .section-heading h2 {
+  color: #f8fafc;
+}
+
+.dark-mode .student-mini-profile,
+.dark-mode .stat-card,
+.dark-mode .quick-card {
+  background: #111827;
+  border-color: #263244;
+}
+
+.dark-mode .student-mini-info h4,
+.dark-mode .stat-card strong,
+.dark-mode .quick-card h3 {
+  color: #f8fafc;
+}
+
+.dark-mode .sidebar-bottom {
+  border-color: #263244;
+}
+
+.dark-mode .sidebar-link {
+  color: #94a3b8;
+}
+
+.dark-mode .sidebar-link:hover {
+  background: #172033;
+  color: #60a5fa;
+}
+
+.dark-mode .topbar-theme-button {
+  background: #111827;
+  border-color: #263244;
+  color: #e2e8f0;
+}
+
+.dark-mode .stat-card span,
+.dark-mode .quick-card p {
+  color: #94a3b8;
+}
+
+.dark-mode .quick-card:hover {
+  border-color: #3b82f6;
+}
+
+.dark-mode .code-battle-link {
+  background: rgba(124, 58, 237, 0.08);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+  .student-main {
+    padding: 28px 30px 45px;
+  }
+
+  .dashboard-stats,
+  .quick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .student-sidebar {
+    width: 82px;
+    padding: 20px 9px;
+  }
+
+  .student-main {
+    width: calc(100% - 82px);
+    margin-left: 82px;
+    padding: 25px;
+  }
+
+  .sidebar-logo {
+    justify-content: center;
+  }
+
+  .logo-text,
+  .student-mini-info {
+    display: none;
+  }
+
+  .student-mini-profile {
+    justify-content: center;
+    padding: 8px;
+    background: transparent;
+    border: 0;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+    padding: 14px 8px;
+    font-size: 0;
+  }
+
+  .sidebar-icon {
+    font-size: 19px;
+  }
+
+  .battle-new-badge {
+    display: none;
+  }
+
+  .student-hero {
+    padding: 35px;
+  }
+}
+
+@media (max-width: 700px) {
+  .student-sidebar {
+    display: none;
+  }
+
+  .student-main {
+    width: 100%;
+    margin-left: 0;
+    padding: 20px 16px 35px;
+  }
+
+  .student-topbar h1 {
+    font-size: 24px;
+  }
+
+  .student-hero {
+    min-height: 330px;
+    padding: 30px 25px;
+  }
+
+  .hero-content h2 {
+    font-size: 42px;
+  }
+
+  .hero-content h2 span {
+    display: block;
+    margin: 5px 0 0;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-promotion {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+  }
+
+  .battle-start-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-topbar h1 {
+    font-size: 21px;
+  }
+
+  .student-hero {
+    min-height: 360px;
+    padding: 25px 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 36px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .primary-action,
+  .battle-action {
+    width: 100%;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .battle-promotion-content {
+    align-items: flex-start;
+  }
+
+  .battle-title-row h2 {
+    font-size: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

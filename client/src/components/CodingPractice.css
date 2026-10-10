@@ -1,0 +1,701 @@
+* {
+  box-sizing: border-box;
+}
+
+.coding-practice-page {
+  min-height: 100vh;
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  transition: 0.3s ease;
+}
+
+/* =====================================================
+   DARK MODE
+===================================================== */
+
+.coding-practice-page.dark-mode {
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(34, 211, 238, 0.12),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(124, 58, 237, 0.16),
+      transparent 30%
+    ),
+    #05070d;
+
+  color: #f8fafc;
+}
+
+/* =====================================================
+   LIGHT MODE
+===================================================== */
+
+.coding-practice-page.light-mode {
+  background:
+    linear-gradient(
+      135deg,
+      #f8fafc,
+      #eef2ff
+    );
+
+  color: #111827;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.coding-header {
+  min-height: 76px;
+
+  padding: 13px 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid;
+}
+
+.dark-mode .coding-header {
+  background: rgba(5, 7, 13, 0.94);
+  border-color: #1e293b;
+}
+
+.light-mode .coding-header {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: #e2e8f0;
+}
+
+/* BRAND */
+
+.coding-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.coding-logo {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #22d3ee
+    );
+
+  color: white;
+
+  font-size: 15px;
+  font-weight: 900;
+
+  box-shadow:
+    0 8px 25px rgba(124, 58, 237, 0.3);
+}
+
+.coding-brand h2 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.coding-brand span {
+  font-size: 11px;
+}
+
+.dark-mode .coding-brand h2 {
+  color: white;
+}
+
+.dark-mode .coding-brand span {
+  color: #94a3b8;
+}
+
+.light-mode .coding-brand h2 {
+  color: #111827;
+}
+
+.light-mode .coding-brand span {
+  color: #64748b;
+}
+
+/* HEADER BUTTONS */
+
+.coding-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.coding-header-btn,
+.coding-logout-btn {
+  height: 40px;
+
+  padding: 0 15px;
+
+  border-radius: 10px;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.coding-header-btn:hover,
+.coding-logout-btn:hover {
+  transform: translateY(-2px);
+}
+
+.dark-mode .coding-header-btn {
+  background: #111827;
+  color: #f8fafc;
+  border: 1px solid #334155;
+}
+
+.light-mode .coding-header-btn {
+  background: white;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.coding-logout-btn {
+  background: #ef4444;
+  color: white;
+  border: none;
+}
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.coding-main {
+  width: min(1200px, calc(100% - 44px));
+
+  margin: auto;
+
+  padding: 50px 0 80px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.coding-eyebrow {
+  color: #22d3ee;
+
+  font-size: 11px;
+  font-weight: 900;
+
+  letter-spacing: 2px;
+}
+
+.coding-hero h1 {
+  margin: 10px 0;
+
+  font-size: clamp(38px, 6vw, 58px);
+
+  font-weight: 900;
+}
+
+.coding-hero p {
+  margin: 0 0 35px;
+
+  font-size: 15px;
+}
+
+.dark-mode .coding-hero p {
+  color: #94a3b8;
+}
+
+.light-mode .coding-hero p {
+  color: #64748b;
+}
+
+/* =====================================================
+   CONTROLS
+===================================================== */
+
+.coding-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+.coding-search {
+  flex: 1;
+
+  height: 50px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 0 16px;
+
+  border-radius: 12px;
+
+  border: 1px solid;
+}
+
+.dark-mode .coding-search {
+  background: #111827;
+  border-color: #273449;
+}
+
+.light-mode .coding-search {
+  background: white;
+  border-color: #dbe2ea;
+}
+
+.coding-search span {
+  font-size: 17px;
+}
+
+.coding-search input {
+  width: 100%;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  font-size: 13px;
+}
+
+.dark-mode .coding-search input {
+  color: white;
+}
+
+.light-mode .coding-search input {
+  color: #111827;
+}
+
+.coding-search input::placeholder {
+  color: #94a3b8;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 7px;
+}
+
+.difficulty-buttons button {
+  padding: 10px 14px;
+
+  border: 1px solid;
+
+  border-radius: 9px;
+
+  font-size: 11px;
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.dark-mode .difficulty-buttons button {
+  background: #111827;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.light-mode .difficulty-buttons button {
+  background: white;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.difficulty-buttons button.active {
+  background: #7c3aed;
+  color: white;
+
+  border-color: #7c3aed;
+}
+
+/* =====================================================
+   STATS
+===================================================== */
+
+.coding-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 45px;
+}
+
+.coding-stat {
+  padding: 20px;
+
+  border-radius: 15px;
+
+  border: 1px solid;
+
+  text-align: center;
+}
+
+.dark-mode .coding-stat {
+  background: #111827;
+  border-color: #273449;
+}
+
+.light-mode .coding-stat {
+  background: white;
+  border-color: #e2e8f0;
+}
+
+.coding-stat strong {
+  display: block;
+
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.coding-stat span {
+  font-size: 11px;
+}
+
+.dark-mode .coding-stat span {
+  color: #94a3b8;
+}
+
+.light-mode .coding-stat span {
+  color: #64748b;
+}
+
+/* =====================================================
+   PROBLEMS
+===================================================== */
+
+.problems-heading {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 20px;
+}
+
+.problems-heading h2 {
+  margin: 0;
+
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.problems-heading p {
+  margin: 6px 0 0;
+
+  font-size: 13px;
+}
+
+.dark-mode .problems-heading p {
+  color: #94a3b8;
+}
+
+.light-mode .problems-heading p {
+  color: #64748b;
+}
+
+.problems-heading > span {
+  color: #22d3ee;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* GRID */
+
+.problem-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+/* CARD */
+
+.problem-card {
+  position: relative;
+
+  padding: 24px;
+
+  border-radius: 18px;
+
+  border: 1px solid;
+
+  overflow: hidden;
+
+  transition: 0.25s ease;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+}
+
+.dark-mode .problem-card {
+  background:
+    linear-gradient(
+      145deg,
+      #111827,
+      #0b1220
+    );
+
+  border-color: #273449;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.light-mode .problem-card {
+  background: white;
+  border-color: #e2e8f0;
+
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* NUMBER */
+
+.problem-number {
+  position: absolute;
+
+  right: 20px;
+  top: 18px;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* TOP */
+
+.problem-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 15px;
+}
+
+.difficulty {
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.difficulty.easy {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22c55e;
+}
+
+.difficulty.medium {
+  background: rgba(245, 158, 11, 0.12);
+  color: #f59e0b;
+}
+
+.category {
+  padding: 6px 9px;
+
+  border-radius: 999px;
+
+  background: rgba(34, 211, 238, 0.1);
+
+  color: #22d3ee;
+
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.problem-card h3 {
+  margin: 0 0 9px;
+
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.problem-card p {
+  min-height: 50px;
+
+  margin: 0 0 20px;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+.dark-mode .problem-card p {
+  color: #94a3b8;
+}
+
+.light-mode .problem-card p {
+  color: #64748b;
+}
+
+/* BUTTON */
+
+.solve-btn {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #9333ea
+    );
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.solve-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 10px 25px rgba(124, 58, 237, 0.35);
+}
+
+/* =====================================================
+   EMPTY
+===================================================== */
+
+.no-problems {
+  padding: 60px 20px;
+
+  text-align: center;
+
+  border: 1px solid;
+
+  border-radius: 18px;
+}
+
+.dark-mode .no-problems {
+  background: #111827;
+  border-color: #273449;
+}
+
+.light-mode .no-problems {
+  background: white;
+  border-color: #e2e8f0;
+}
+
+.no-problems div {
+  font-size: 40px;
+}
+
+.no-problems h3 {
+  margin: 12px 0 5px;
+}
+
+.no-problems p {
+  margin: 0;
+
+  color: #94a3b8;
+
+  font-size: 13px;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 850px) {
+  .coding-header {
+    padding: 13px 20px;
+  }
+
+  .coding-main {
+    width: calc(100% - 30px);
+  }
+
+  .coding-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .difficulty-buttons {
+    justify-content: center;
+  }
+
+  .problem-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .coding-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .coding-header-actions {
+    width: 100%;
+  }
+
+  .coding-header-actions button {
+    flex: 1;
+  }
+
+  .coding-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .problems-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

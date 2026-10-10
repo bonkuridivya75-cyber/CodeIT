@@ -1,0 +1,911 @@
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.faculty-create-exam-page {
+  min-height: 100vh;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.faculty-create-exam-page.light {
+  background: #f5f7fb;
+  color: #111827;
+}
+
+.faculty-create-exam-page.dark {
+  background: #0b1120;
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.create-exam-header {
+  min-height: 105px;
+
+  padding: 20px 40px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  border-bottom: 1px solid;
+}
+
+.faculty-create-exam-page.light
+.create-exam-header {
+  background: #ffffff;
+  border-color: #e2e8f0;
+}
+
+.faculty-create-exam-page.dark
+.create-exam-header {
+  background: #111827;
+  border-color: #263449;
+}
+
+
+/* =====================================================
+   HEADER LEFT
+===================================================== */
+
+.create-exam-header-left {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 25px;
+}
+
+.create-exam-header-left h1 {
+  margin: 7px 0 5px;
+
+  font-size: 28px;
+
+  font-weight: 700;
+}
+
+.create-exam-header-left p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.faculty-create-exam-page.dark
+.create-exam-header-left p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   BACK
+===================================================== */
+
+.create-back-btn {
+  border: none;
+
+  background: transparent;
+
+  color: #2563eb;
+
+  padding: 7px 0;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+
+.create-back-btn:hover {
+  color: #1d4ed8;
+}
+
+
+/* =====================================================
+   THEME
+===================================================== */
+
+.create-theme-btn {
+  padding: 10px 15px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #334155;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.faculty-create-exam-page.dark
+.create-theme-btn {
+  background: #172033;
+
+  border-color: #334155;
+
+  color: #f8fafc;
+}
+
+
+/* =====================================================
+   CONTAINER
+===================================================== */
+
+.create-exam-container {
+  width: 100%;
+
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 30px;
+
+  box-sizing: border-box;
+}
+
+
+/* =====================================================
+   SECTION
+===================================================== */
+
+.create-section {
+  margin-bottom: 20px;
+
+  padding: 28px;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 2px 8px
+    rgba(15, 23, 42, 0.03);
+}
+
+.faculty-create-exam-page.dark
+.create-section {
+  background: #111827;
+
+  border-color: #263449;
+}
+
+
+/* =====================================================
+   SECTION HEADING
+===================================================== */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 25px;
+}
+
+.section-heading > span {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin: 0 0 5px;
+
+  font-size: 20px;
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+.faculty-create-exam-page.dark
+.section-heading p {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   EXAM TYPE
+===================================================== */
+
+.exam-type-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 15px;
+}
+
+.exam-type-option {
+  min-height: 90px;
+
+  padding: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  text-align: left;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.exam-type-option:hover {
+  border-color: #93c5fd;
+}
+
+.exam-type-option.selected {
+  border: 2px solid #2563eb;
+
+  background: #eff6ff;
+}
+
+.faculty-create-exam-page.dark
+.exam-type-option {
+  background: #172033;
+
+  border-color: #334155;
+
+  color: #f8fafc;
+}
+
+.faculty-create-exam-page.dark
+.exam-type-option.selected {
+  background: #172554;
+
+  border-color: #3b82f6;
+}
+
+.type-icon {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  background: #f1f5f9;
+
+  font-size: 22px;
+}
+
+.exam-type-option strong {
+  display: block;
+
+  font-size: 15px;
+
+  margin-bottom: 5px;
+}
+
+.exam-type-option small {
+  display: block;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.faculty-create-exam-page.dark
+.exam-type-option small {
+  color: #94a3b8;
+}
+
+
+/* =====================================================
+   FORM GRID
+===================================================== */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* =====================================================
+   FORM GROUP
+===================================================== */
+
+.form-group {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.form-group label {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #334155;
+}
+
+.faculty-create-exam-page.dark
+.form-group label {
+  color: #e2e8f0;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #111827;
+
+  padding: 11px 13px;
+
+  font-family: inherit;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.08);
+}
+
+.faculty-create-exam-page.dark
+.form-group input,
+.faculty-create-exam-page.dark
+.form-group textarea,
+.faculty-create-exam-page.dark
+.form-group select {
+  background: #172033;
+
+  border-color: #334155;
+
+  color: #f8fafc;
+}
+
+.form-group textarea {
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   QUESTION BUILDER
+===================================================== */
+
+.question-builder {
+  padding-bottom: 25px;
+}
+
+.question-builder-card {
+  padding: 22px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 9px;
+
+  background: #f8fafc;
+}
+
+.faculty-create-exam-page.dark
+.question-builder-card {
+  background: #0f172a;
+
+  border-color: #334155;
+}
+
+.question-builder-card > h3 {
+  margin: 0 0 20px;
+
+  font-size: 17px;
+
+  color: #2563eb;
+}
+
+
+/* =====================================================
+   MCQ
+===================================================== */
+
+.mcq-builder h4 {
+  margin: 22px 0 15px;
+
+  font-size: 14px;
+}
+
+.options-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(120px, 0.35fr);
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.small-field {
+  max-width: 180px;
+}
+
+
+/* =====================================================
+   CODING
+===================================================== */
+
+.coding-builder {
+  margin-top: 20px;
+}
+
+.code-input {
+  font-family:
+    Consolas,
+    Monaco,
+    "Courier New",
+    monospace !important;
+
+  font-size: 13px !important;
+
+  background: #0f172a !important;
+
+  color: #e2e8f0 !important;
+}
+
+
+/* =====================================================
+   ADD QUESTION
+===================================================== */
+
+.add-question-btn {
+  margin-top: 22px;
+
+  padding: 11px 18px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.add-question-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =====================================================
+   CREATED QUESTIONS
+===================================================== */
+
+.created-questions-section {
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.faculty-create-exam-page.dark
+.created-questions-section {
+  border-color: #334155;
+}
+
+.created-question-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+.created-question-header h3 {
+  margin: 0 0 4px;
+
+  font-size: 16px;
+}
+
+.created-question-header p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.question-count-badge {
+  min-width: 35px;
+  height: 35px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   NO QUESTIONS
+===================================================== */
+
+.no-created-questions {
+  padding: 35px 20px;
+
+  text-align: center;
+
+  border: 1px dashed #cbd5e1;
+
+  border-radius: 8px;
+}
+
+.no-created-questions > div {
+  font-size: 30px;
+
+  margin-bottom: 10px;
+}
+
+.no-created-questions h4 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+}
+
+.no-created-questions p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =====================================================
+   CREATED QUESTION LIST
+===================================================== */
+
+.created-question-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.created-question-item {
+  min-height: 65px;
+
+  padding: 12px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  border: 1px solid #dbe2ea;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.faculty-create-exam-page.dark
+.created-question-item {
+  background: #172033;
+
+  border-color: #334155;
+}
+
+.created-number {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 6px;
+
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.created-question-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.created-question-title {
+  font-size: 14px;
+
+  font-weight: 600;
+
+  margin-bottom: 5px;
+}
+
+.created-question-meta {
+  display: flex;
+
+  gap: 8px;
+}
+
+.created-question-meta span {
+  padding: 3px 7px;
+
+  border-radius: 4px;
+
+  background: #f1f5f9;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+.remove-question-btn {
+  border: 1px solid #fecaca;
+
+  background: #fff7f7;
+
+  color: #dc2626;
+
+  padding: 7px 10px;
+
+  border-radius: 5px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.remove-question-btn:hover {
+  background: #fee2e2;
+}
+
+
+/* =====================================================
+   FINAL ACTIONS
+===================================================== */
+
+.create-exam-actions {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 10px;
+
+  padding: 20px 0;
+}
+
+.cancel-create-btn,
+.final-create-btn {
+  min-width: 120px;
+
+  padding: 11px 17px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.cancel-create-btn {
+  border: 1px solid #cbd5e1;
+
+  background: #ffffff;
+
+  color: #334155;
+}
+
+.final-create-btn {
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+}
+
+.final-create-btn:hover {
+  background: #1d4ed8;
+}
+
+.final-create-btn:disabled,
+.cancel-create-btn:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .create-exam-header {
+    padding: 18px 20px;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .create-exam-header-left {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+  .create-exam-container {
+    padding: 20px 15px;
+  }
+
+  .create-section {
+    padding: 20px;
+  }
+
+  .exam-type-grid,
+  .form-grid,
+  .options-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .small-field {
+    max-width: none;
+  }
+
+  .created-question-item {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+  .remove-question-btn {
+    margin-left: 47px;
+  }
+
+  .create-exam-actions {
+    flex-direction: column-reverse;
+  }
+
+  .cancel-create-btn,
+  .final-create-btn {
+    width: 100%;
+  }
+}

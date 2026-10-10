@@ -1,0 +1,555 @@
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family:
+    Inter,
+    "Segoe UI",
+    Roboto,
+    Arial,
+    sans-serif;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   APP CONTAINER
+===================================================== */
+
+.app {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+
+  transition:
+    background 0.5s ease,
+    color 0.5s ease;
+}
+
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+
+.theme-dark {
+  --bg-primary: #050816;
+  --bg-secondary: #0a1024;
+  --bg-card: rgba(15, 23, 50, 0.72);
+  --bg-card-solid: #101936;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #b7c1d6;
+  --text-muted: #7f8ba6;
+
+  --border-color: rgba(148, 163, 184, 0.16);
+  --border-hover: rgba(129, 140, 248, 0.5);
+
+  --accent: #7c3aed;
+  --accent-light: #a78bfa;
+
+  --blue: #38bdf8;
+  --cyan: #22d3ee;
+
+  --success: #34d399;
+  --warning: #fbbf24;
+  --danger: #fb7185;
+
+  --shadow:
+    0 25px 70px rgba(0, 0, 0, 0.45);
+
+  --glass:
+    rgba(8, 15, 35, 0.72);
+
+  background:
+    radial-gradient(
+      circle at 15% 15%,
+      rgba(124, 58, 237, 0.15),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 25%,
+      rgba(56, 189, 248, 0.1),
+      transparent 28%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+}
+
+
+/* =====================================================
+   LIGHT THEME
+===================================================== */
+
+.theme-light {
+  --bg-primary: #f4f7ff;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.78);
+  --bg-card-solid: #ffffff;
+
+  --text-primary: #172033;
+  --text-secondary: #526079;
+  --text-muted: #7b879d;
+
+  --border-color: rgba(71, 85, 105, 0.14);
+  --border-hover: rgba(99, 102, 241, 0.4);
+
+  --accent: #6d28d9;
+  --accent-light: #8b5cf6;
+
+  --blue: #0284c7;
+  --cyan: #0891b2;
+
+  --success: #059669;
+  --warning: #d97706;
+  --danger: #e11d48;
+
+  --shadow:
+    0 25px 60px rgba(71, 85, 105, 0.16);
+
+  --glass:
+    rgba(255, 255, 255, 0.75);
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(139, 92, 246, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(14, 165, 233, 0.1),
+      transparent 30%
+    ),
+    var(--bg-primary);
+
+  color: var(--text-primary);
+}
+
+
+/* =====================================================
+   BODY THEME
+===================================================== */
+
+body.app-dark {
+  background: #050816;
+  color: #f8fafc;
+}
+
+body.app-light {
+  background: #f4f7ff;
+  color: #172033;
+}
+
+
+/* =====================================================
+   APP CONTENT
+===================================================== */
+
+.app-content {
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+
+  animation: pageAppear 0.6s ease both;
+}
+
+@keyframes pageAppear {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =====================================================
+   ANIMATED BACKGROUND
+===================================================== */
+
+.background-effects {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.gradient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.28;
+
+  animation:
+    orbFloat 12s ease-in-out infinite;
+}
+
+.orb-one {
+  width: 300px;
+  height: 300px;
+
+  top: -100px;
+  left: -80px;
+
+  background: #7c3aed;
+}
+
+.orb-two {
+  width: 260px;
+  height: 260px;
+
+  right: -80px;
+  top: 25%;
+
+  background: #0ea5e9;
+
+  animation-delay: -4s;
+}
+
+.orb-three {
+  width: 220px;
+  height: 220px;
+
+  left: 40%;
+  bottom: -100px;
+
+  background: #06b6d4;
+
+  animation-delay: -7s;
+}
+
+@keyframes orbFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+
+  33% {
+    transform: translate3d(30px, -25px, 0) scale(1.08);
+  }
+
+  66% {
+    transform: translate3d(-20px, 25px, 0) scale(0.95);
+  }
+}
+
+
+/* =====================================================
+   GLASS UTILITY
+===================================================== */
+
+.glass {
+  background: var(--glass);
+
+  border: 1px solid var(--border-color);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: var(--shadow);
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =====================================================
+   COMMON ANIMATED BUTTON
+===================================================== */
+
+.animated-button {
+  position: relative;
+
+  border: 0;
+  outline: none;
+
+  padding: 13px 22px;
+
+  border-radius: 14px;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--accent),
+      var(--blue)
+    );
+
+  font-weight: 700;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.animated-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition: left 0.6s ease;
+}
+
+.animated-button:hover {
+  transform: translateY(-3px) scale(1.02);
+
+  box-shadow:
+    0 12px 35px
+    rgba(124, 58, 237, 0.3);
+}
+
+.animated-button:hover::before {
+  left: 130%;
+}
+
+.animated-button:active {
+  transform: translateY(0) scale(0.98);
+}
+
+
+/* =====================================================
+   THEME STATUS
+===================================================== */
+
+.theme-status {
+  position: fixed;
+
+  bottom: 18px;
+  right: 18px;
+
+  z-index: 100;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 13px;
+
+  border-radius: 50px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: var(--text-secondary);
+
+  background: var(--glass);
+
+  border: 1px solid var(--border-color);
+
+  backdrop-filter: blur(15px);
+
+  opacity: 0.65;
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+
+.theme-status:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.theme-status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--accent-light);
+
+  box-shadow:
+    0 0 10px var(--accent-light);
+
+  animation: statusPulse 2s infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.75);
+  }
+}
+
+
+/* =====================================================
+   SELECTION
+===================================================== */
+
+::selection {
+  background: rgba(124, 58, 237, 0.35);
+  color: white;
+}
+
+
+/* =====================================================
+   SCROLLBAR
+===================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      var(--accent),
+      var(--blue)
+    );
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      var(--blue),
+      var(--accent)
+    );
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+  .theme-status {
+    bottom: 12px;
+    right: 12px;
+
+    font-size: 10px;
+
+    padding: 7px 10px;
+  }
+
+  .gradient-orb {
+    filter: blur(55px);
+  }
+
+  .orb-one {
+    width: 200px;
+    height: 200px;
+  }
+
+  .orb-two {
+    width: 180px;
+    height: 180px;
+  }
+
+  .orb-three {
+    width: 160px;
+    height: 160px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .theme-status {
+    display: none;
+  }
+}
+
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

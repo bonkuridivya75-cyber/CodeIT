@@ -1,0 +1,454 @@
+/* ================================
+   CODEIT CODING PRACTICE
+================================ */
+
+.coding-practice-page {
+  min-height: 100vh;
+  background: #f4f7fb;
+  padding: 32px;
+  color: #111827;
+}
+
+/* Header */
+
+.coding-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+  gap: 20px;
+}
+
+.coding-header h1 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.coding-header p {
+  margin: 8px 0 0;
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.back-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.back-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+/* ================================
+   STATS
+================================ */
+
+.coding-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.coding-stat-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  background: #eff6ff;
+}
+
+.coding-stat-card h3 {
+  margin: 0;
+  font-size: 25px;
+  color: #111827;
+}
+
+.coding-stat-card p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.coding-stat-card.easy .stat-icon {
+  background: #ecfdf5;
+}
+
+.coding-stat-card.medium .stat-icon {
+  background: #fffbeb;
+}
+
+.coding-stat-card.hard .stat-icon {
+  background: #fef2f2;
+}
+
+/* ================================
+   CONTROLS
+================================ */
+
+.coding-controls {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-bottom: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.search-box {
+  flex: 1;
+  max-width: 450px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  padding: 0 14px;
+  background: #f9fafb;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  padding: 12px 0;
+  font-size: 14px;
+  color: #111827;
+}
+
+.search-box input::placeholder {
+  color: #9ca3af;
+}
+
+.difficulty-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.difficulty-buttons button {
+  border: 1px solid #d1d5db;
+  background: white;
+  color: #374151;
+
+  padding: 9px 14px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.difficulty-buttons button:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.difficulty-buttons button.active {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: white;
+}
+
+.difficulty-buttons button.active.easy-btn {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.difficulty-buttons button.active.medium-btn {
+  background: #d97706;
+  border-color: #d97706;
+}
+
+.difficulty-buttons button.active.hard-btn {
+  background: #dc2626;
+  border-color: #dc2626;
+}
+
+/* ================================
+   QUESTION GRID
+================================ */
+
+.coding-question-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.coding-question-card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 20px;
+
+  min-height: 220px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s,
+    border-color 0.2s;
+}
+
+.coding-question-card:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.1);
+}
+
+/* Question top */
+
+.question-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.question-number {
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.difficulty {
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.difficulty.easy {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.difficulty.medium {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.difficulty.hard {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Question content */
+
+.coding-question-card h2 {
+  margin: 0 0 10px;
+
+  font-size: 18px;
+  line-height: 1.4;
+
+  color: #111827;
+}
+
+.question-description {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.6;
+
+  flex: 1;
+}
+
+/* Footer */
+
+.question-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #f0f0f0;
+}
+
+.question-footer span {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.solve-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+
+  padding: 9px 15px;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.solve-btn:hover {
+  background: #1d4ed8;
+  transform: translateX(2px);
+}
+
+/* ================================
+   LOADING
+================================ */
+
+.coding-loading {
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  color: #6b7280;
+}
+
+.loader {
+  width: 38px;
+  height: 38px;
+
+  border: 4px solid #dbeafe;
+  border-top-color: #2563eb;
+
+  border-radius: 50%;
+
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   EMPTY STATE
+================================ */
+
+.coding-empty {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+
+  min-height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.coding-empty > div {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.coding-empty h2 {
+  margin: 0;
+  color: #111827;
+}
+
+.coding-empty p {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 1100px) {
+  .coding-question-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coding-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .coding-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-box {
+    max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .coding-practice-page {
+    padding: 18px;
+  }
+
+  .coding-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .coding-header h1 {
+    font-size: 24px;
+  }
+
+  .coding-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .coding-question-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .difficulty-buttons {
+    width: 100%;
+  }
+
+  .difficulty-buttons button {
+    flex: 1;
+  }
+}

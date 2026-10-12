@@ -1,44 +1,92 @@
-# MERN
+# CodeIT – Online Coding and Examination Platform
 
-This is a simple NodeJS + Express + React + MongoDB application. This application serves as a basic template for a mern applications.
+CodeIT is a web-based coding and examination platform designed to help students practice programming, take online examinations, and track their learning progress. It provides a centralized platform for students and faculty to manage coding practice, exams, and academic performance.
 
-What does this application do?
--------------------------------
-This application serves a simple MERN based TODO application to demonstrate the use of MERN stack. This application uses following technologies:
-- MongoDB: used as database
-- Express: used as web application framework
-- React: used as frontend framework to build UI
-- NodeJS: used as backend server
+## 🚀 Features
 
+- **Student & Faculty Login:** Separate login interfaces for students and faculty.
+- **Student Dashboard:** Access coding problems, examinations, submissions, and progress.
+- **Online Code Editor:** Practice programming in languages such as Python, Java, C++, and JavaScript.
+- **Coding Problems:** Solve programming challenges to improve problem-solving skills.
+- **Online Examinations:** Participate in timed MCQ and coding exams.
+- **Faculty Dashboard:** Manage students, examinations, questions, and results.
+- **Results & Progress Tracking:** View examination results and monitor student performance.
+- **Dark & Light Mode:** Switch between themes for a comfortable user experience.
+- **Responsive Interface:** Simple and user-friendly design for easy navigation.
 
-## How to run
+## 🛠️ Technologies Used
 
-Before running the application, make sure all dependencies are installed. 
+- **Frontend:** React.js, HTML, CSS, JavaScript
+- **Development Tools:** Node.js, npm, Visual Studio Code
+- **Version Control:** Git and GitHub
 
-1. Install server & client dependencies, run following command in terminal:
-   > `npm install; cd client && npm install && cd ..`
+## 📂 Project Structure
 
-2. Run following command to start both server and client:
-   > `npm run dev`
+```text
+CodeIT/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── styles/
+│   ├── App.jsx
+│   └── main.jsx
+├── package.json
+├── index.html
+└── README.md
+```
 
-3. Refresh the URL in simple browser to see the output.
+*Note: Update the folder structure above to match your actual project.*
 
+## ⚙️ How to Run the Project
 
+### Prerequisites
 
-## FAQs & Debugging
+- Node.js and npm installed
+- Visual Studio Code or another code editor
 
-### 1. Node server failing to connect to Database
+### Installation
 
-   Ensure Mongo_DB_URI is set in .env file. If not, create a new file named `.env` in root directory and add following line:
-   > `MONGO_DB_URI=<YOUR_MONGO_DB_URI>`
+1. Clone the repository:
 
-   Once the studio is connected to your workspace, `MONGO_DB_URI` should be automatically set in your `.env` file.
+   ```bash
+   git clone YOUR_GITHUB_REPOSITORY_URL
+   ```
 
-   Alternatively, you can create `MONGO_DB_URI` using value present in the file **.vscode/.studio/studio-env.json**.
-   MONGO_DB_URI typically looks like this:
-> `mongodb://<USERNAME>:<PASSWORD>@<HOST>:<PORT>/<DATABASE_NAME>`
+2. Open the project folder:
 
-### 2. Can I start server and client separately?   
-   `npm run dev` starts both server and client. If you want to start them separately, you can use following commands:
-   - `npm run server`: to start server
-   - `npm run client`: to start client
+   ```bash
+   cd CodeIT
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in the terminal.
+
+## 🎯 Project Objective
+
+The objective of CodeIT is to simplify coding practice and online examinations by bringing programming challenges, assessments, and performance tracking into one platform.
+
+## 🔮 Future Enhancements
+
+- Integration with a backend and database.
+- Automated code execution and test-case evaluation.
+- Advanced plagiarism detection.
+- Detailed performance analytics.
+- Secure authentication and user management.
+
+## 👩‍💻 Developed By
+
+**CodeIT – Online Coding and Examination Platform**
+
+Built using React.js, JavaScript, HTML, and CSS.
